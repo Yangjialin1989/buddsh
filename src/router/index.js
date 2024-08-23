@@ -1,13 +1,30 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import Bulma from "@/views/Bulma.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView
+      name: 'layout',
+      component: ()=>import('../layout/Layout.vue'),
+      //跳转路由
+      redirect:'/home',
+      //嵌套路由
+      children:[
+        {
+          path: '/home',
+          name: 'home',
+          component:HomeView,
+        },
+
+        ]
+    },
+    {
+      path: '/bulma',
+      name: 'bulma',
+      component:Bulma,
     },
     {
       path: '/about',

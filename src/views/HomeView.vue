@@ -2,10 +2,9 @@
 import {getCurrentInstance} from "vue";
 const { proxy } = getCurrentInstance()
 
-// 这里不需要全部引入，只需按需引入所需的组件
-// import { Button } from 'ant-design-vue';
-import { message } from 'ant-design-vue';
 import "ant-design-vue/es/message/style/css.js"
+import {UnlockOutlined} from '@ant-design/icons-vue'
+
 const info = () => {
   proxy.$message.info('This is a normal message');
 };
@@ -23,5 +22,5 @@ const openNotification = () => {
 <template>
   <a-button type="primary" @click="info">Display normal message</a-button>
   <a-button type="primary" @click="openNotification">Open the notification box</a-button>
-
+  <unlock-outlined />
 </template>

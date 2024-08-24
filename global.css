@@ -1,0 +1,20 @@
+html{
+    font-size: 16px;
+}
+@media screen and (min-width:1024px){
+    html{
+        font-size: 16px;
+    }
+}
+/*屏幕宽度大于600，小于900的时候*/
+@media screen and (min-width:769px) and (max-width:1023px){
+    html{
+        font-size:14px;
+    }
+}
+/*屏幕宽度小于600的时候*/
+@media screen and (max-width:768px){
+    html{
+        font-size:10px;
+    }
+}

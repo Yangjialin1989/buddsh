@@ -4,9 +4,11 @@ import Layout from "@/layout/Layout.vue";
 
 </script>
 <template>
-  <RouterView/>
+<!--  <RouterView/>-->
+  <Layout></Layout>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+
 
 </style>

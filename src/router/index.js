@@ -8,7 +8,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'layout',
-      component: ()=>import('../layout/Layout.vue'),
+      // component: ()=>import('../layout/Layout.vue'),
       //跳转路由
       redirect:'/home',
       //嵌套路由

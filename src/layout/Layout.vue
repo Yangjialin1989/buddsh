@@ -4,7 +4,7 @@
 
   <div id="main">
     <div class="scroll">
-      <div class="container">
+      <div class="container" >
         <nav class="navbar is-spaced has-shadow" role="navigation" aria-label="main navigation">
 
           <div class="navbar-brand">
@@ -73,7 +73,7 @@
             </div>
           </div>
         </nav>
-        <a-row>
+        <a-row :gutter="16">
           <a-col :span="18">
             <!--          图片轮播-->
             <a-carousel autoplay>
@@ -92,74 +92,29 @@
               <div><h3>3</h3></div>
               <div><h3>4</h3></div>
             </a-carousel>
-            <!--          博客列表-->
-            <div class="box">
-              <h1><router-link to="/">文章标题</router-link></h1>
-              <a-space>
-                <span>作者:张三</span>
-                <span>分类:Vue3</span>
-                <span>发布日期:2002年11月06日</span>
-              </a-space>
-              <p>1、互联网宗教信息服务申请表；2、申请设立或者登记备案的材料、法人或主要负责人身份证件；● 企业法人：企业营业执照；● 事业单位：业单位法人证书；● 社会团体（含宗教团体）：宗教团体法人...</p>
-            </div>
-            <div class="box">
-              <h1><router-link to="/">文章标题</router-link></h1>
-              <a-space>
-                <span>作者:张三</span>
-                <span>分类:Vue3</span>
-                <span>发布日期:2002年11月06日</span>
-              </a-space>
-              <p>1、互联网宗教信息服务申请表；2、申请设立或者登记备案的材料、法人或主要负责人身份证件；● 企业法人：企业营业执照；● 事业单位：业单位法人证书；● 社会团体（含宗教团体）：宗教团体法人...</p>
-            </div>
-            <div class="box">
-              <h1><router-link to="/">文章标题</router-link></h1>
-              <a-space>
-                <span>作者:张三</span>
-                <span>分类:Vue3</span>
-                <span>发布日期:2002年11月06日</span>
-              </a-space>
-              <p>1、互联网宗教信息服务申请表；2、申请设立或者登记备案的材料、法人或主要负责人身份证件；● 企业法人：企业营业执照；● 事业单位：业单位法人证书；● 社会团体（含宗教团体）：宗教团体法人...</p>
-            </div>
-            <div class="box">
-              <h1><router-link to="/">文章标题</router-link></h1>
-              <a-space>
-                <span>作者:张三</span>
-                <span>分类:Vue3</span>
-                <span>发布日期:2002年11月06日</span>
-              </a-space>
-              <p>1、互联网宗教信息服务申请表；2、申请设立或者登记备案的材料、法人或主要负责人身份证件；● 企业法人：企业营业执照；● 事业单位：业单位法人证书；● 社会团体（含宗教团体）：宗教团体法人...</p>
-            </div>
-            <div class="box">
-              <h1><router-link to="/">文章标题</router-link></h1>
-              <a-space>
-                <span>作者:张三</span>
-                <span>分类:Vue3</span>
-                <span>发布日期:2002年11月06日</span>
-              </a-space>
-              <p>1、互联网宗教信息服务申请表；2、申请设立或者登记备案的材料、法人或主要负责人身份证件；● 企业法人：企业营业执照；● 事业单位：业单位法人证书；● 社会团体（含宗教团体）：宗教团体法人...</p>
-            </div>
+            <!--          博客列表路由-->
 
+            <RouterView/>
 
 
           </a-col>
           <a-col :span="6">
-
+            <AsideBox type="search"></AsideBox>
+            <AsideBox type="news" name="最新文章"></AsideBox>
           </a-col>
         </a-row>
 
-        <a-row>
 
-        </a-row>
 
       </div>
 
       <footer class="footer">
         <div class="has-text-centered">
-          <p class=" has-text-grey">
+          <p class=" has-text-grey is-size-6-mobile">
             电话:17704884196 13474811577
             地址:呼和浩特市兴松街赛马场南
           </p>
-          <p class=" has-text-grey">
+          <p class=" has-text-grey is-size-6-mobile">
             蒙ICP备19003669
             蒙公网安备15000002000102
             互联网宗教信息服务许可证号20220000005
@@ -167,14 +122,17 @@
         </div>
       </footer>
     </div>
+
+
   </div>
 
 
-<!--  <RouterView/>-->
+
 </template>
 <script setup>
 import { LeftCircleOutlined, RightCircleOutlined } from '@ant-design/icons-vue';
 import {RouterView,RouterLink} from "vue-router";
+import AsideBox from "@/components/AsideBox.vue";
 
 
 </script>
@@ -182,6 +140,7 @@ import {RouterView,RouterLink} from "vue-router";
 #main{
   width: 100vw;
   position: fixed;
+
   top:0;
   left:0;
   .scroll{
@@ -191,22 +150,6 @@ import {RouterView,RouterLink} from "vue-router";
   }
 
 }
-.footers{
-   //background-color: white;
-   //position: fixed;
-   //bottom:8px;
-   //left:0;
-   //
-   //height:60px;
-   //line-height: 60px;
-   //
-   //width: 100vw;
-   //
-   //background-color: #f9f9f9;
-   //transition: opacity 0.5s ease;
-   //opacity: 1;
-
- }
 .example {
   color: blue;
   font-size: 16px;

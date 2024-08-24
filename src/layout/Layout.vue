@@ -74,7 +74,7 @@
           </div>
         </nav>
         <a-row :gutter="16">
-          <a-col :span="18">
+          <a-col :lg="18" :xs="17">
             <!--          图片轮播-->
             <a-carousel autoplay>
               <template #prevArrow>
@@ -98,7 +98,7 @@
 
 
           </a-col>
-          <a-col :span="6">
+          <a-col :lg="6" :xs="7">
             <AsideBox type="search"></AsideBox>
             <AsideBox type="news" name="最新文章"></AsideBox>
           </a-col>

@@ -5,8 +5,9 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 
-//bulma css 框架
-
+//字体图标 框架
+// import 'font-awesome/css/font-awesome.css'
+import 'font-awesome/css/font-awesome.min.css';
 // main.js 或 main.ts
 import 'bulma/css/bulma.min.css';
 // import "@fortawesome/fontawesome-free/css/all.css"

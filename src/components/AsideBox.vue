@@ -33,7 +33,14 @@ const props = defineProps({
     <h1 class="is-size-6 has-text-weight-semibold">{{ props.name}}</h1>
 <!--    搜索-->
     <div v-if="props.type==='search'">
-      <a-input-search placeholder="input search text"/>
+
+      <div class="control has-icons-right">
+        <input class="input" type="text" placeholder="搜索">
+
+        <span class="icon is-small is-right">
+          <FontAwesomeIcon icon="search"  />
+        </span>
+      </div>
     </div>
 <!--    文章列表-->
     <div v-if="props.type==='news' && props.newsData.length > 0">
@@ -61,5 +68,5 @@ const props = defineProps({
 </template>
 
 <style scoped>
-
+@import "font-awesome/css/font-awesome.min.css";
 </style>

@@ -31,8 +31,9 @@ export default defineConfig(({coomand,mode})=>{
 
       //代理
       proxy:{
-        'api':{
-          target:env.VITE_APP_API_BASEURL,
+        '/api':{
+          // target:env.VITE_APP_API_BASEURL,
+          target: 'http://127.0.0.1:8000/', // 目标服务器地址
           changeOrigin:true,
           rewrite:(path)=>path.replace(/^\/api/,'')
         }

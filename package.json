@@ -21,9 +21,11 @@
     "ant-design-vue": "3.2.13",
     "axios": "^1.7.5",
     "bulma": "^1.0.2",
+    "bulma-prefers-dark": "^0.1.0-beta.1",
     "font-awesome": "^4.7.0",
     "jquery": "^3.7.1",
-    "pinia": "^2.1.7",
+    "mobile-detect": "^1.4.5",
+    "pinia": "^2.2.2",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
   },

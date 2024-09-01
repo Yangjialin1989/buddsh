@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Bulma from "@/views/Bulma.vue";
+import Index from "@/views/Index.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,30 +11,28 @@ const router = createRouter({
       name: 'layout',
       // component: ()=>import('../layout/Layout.vue'),
       //跳转路由
-      redirect:'/home',
+      redirect:'/index',
       //嵌套路由
       children:[
         {
-          path: '/home',
-          name: 'home',
-          component:HomeView,
+          path: '/index',
+          name: 'index',
+          component:Index,
         },
-
+        {
+          path: '/bulma',
+          name: 'bulma',
+          component:Bulma,
+        },
+        {
+          path: '/about',
+          name: 'about',
+          component: () => import('../views/AboutView.vue')
+        }
         ]
     },
-    {
-      path: '/bulma',
-      name: 'bulma',
-      component:Bulma,
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
-    }
+
+
   ]
 })
 

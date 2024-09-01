@@ -7,29 +7,29 @@
 
 
 <!--    搜索-->
-    <div v-if="props.type==='search'">
-        <div class="control has-icons-right">
-          <input  class="is-small-mobile input point"
-                  type="text"
-                  v-model="inputValue"
-                  @change="change"
-                  @input="input"
-                  @click="change"
-                  @keyup.enter="change"
-                  placeholder="搜索" >
-          <span  class="icon is-small is-right">
-            <font-awesome-icon  icon="fa-solid fa-search" aria-hidden="true"/>
-          </span>
-        </div>
+<!--    <div v-if="props.type==='search'">-->
+<!--        <div class="control has-icons-right">-->
+<!--          <input  class="is-small-mobile input point"-->
+<!--                  type="text"-->
+<!--                  v-model="inputValue"-->
+<!--                  @change="change"-->
+<!--                  @input="input"-->
+<!--                  @click="change"-->
+<!--                  @keyup.enter="change"-->
+<!--                  placeholder="搜索" >-->
+<!--          <span  class="icon is-small is-right">-->
+<!--            <font-awesome-icon  icon="fa-solid fa-search" aria-hidden="true"/>-->
+<!--          </span>-->
+<!--        </div>-->
 
 
 
-<!--      <a-input-search class="is-full-mobile"-->
-<!--            v-model:value="inputValue"-->
-<!--            @change="$emit('update:searchValue',$event.target.value)"-->
-<!--            @search="$emit('someSearch')"-->
-<!--            placeholder="搜索"/>-->
-    </div>
+<!--&lt;!&ndash;      <a-input-search class="is-full-mobile"&ndash;&gt;-->
+<!--&lt;!&ndash;            v-model:value="inputValue"&ndash;&gt;-->
+<!--&lt;!&ndash;            @change="$emit('update:searchValue',$event.target.value)"&ndash;&gt;-->
+<!--&lt;!&ndash;            @search="$emit('someSearch')"&ndash;&gt;-->
+<!--&lt;!&ndash;            placeholder="搜索"/>&ndash;&gt;-->
+<!--    </div>-->
 
 <!--    文章列表-->
     <div v-if="props.type==='news' && props.newsData.length > 0">
@@ -50,7 +50,7 @@
     </div>
 <!--    标签-->
     <div v-if="props.type === 'tag' && props.tagsData.length > 0">
-      <a-tag v-for="(item,index) in props.tagsData" :color="item.color">{{item.name}}</a-tag>
+      <span style="margin-left: 2px" class="tag is-info" v-for="(item,index) in props.tagsData" :color="item.color">{{item.name}}</span>
     </div>
 <!--    文章归档-->
     <div v-if="props.type==='archive' && props.archiveData.length > 0">

@@ -30,7 +30,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <a-typography class="box">
+  <a-typography class=""  >
     <a-typography-title :level="3">
       <RouterLink :to="{ path:'/' }">{{ props.title }}</RouterLink>
     </a-typography-title>
@@ -39,12 +39,12 @@ const props = defineProps({
 
         <a-space>
           <user-outlined></user-outlined>
-          <span>作者:<slot name="author">{{ props.author }}</slot></span>
+          <span  class="has-text-grey"  >作者:<slot name="author">{{ props.author }}</slot></span>
         </a-space>
         <folder-outlined></folder-outlined>
-        <span>分类:<slot name="category">{{ props.category }}</slot></span>
+        <span  class="has-text-grey">分类:<slot name="category">{{ props.category }}</slot></span>
         <ClockCircleOutlined></ClockCircleOutlined>
-        <span>发布日期:<slot name="pubdate">{{ props.pubdate }}</slot></span>
+        <span  class="has-text-grey">发布日期:<slot name="pubdate">{{ props.pubdate }}</slot></span>
     </a-space>
     <a-typography-paragraph type="secondary">
       {{ props.desc }}

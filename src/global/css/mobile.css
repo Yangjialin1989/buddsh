@@ -1,0 +1,18 @@
+.mobileLogo{
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    z-index: 100;
+
+}
+.mobileLogo img{
+    width: 100%; /* 使图片填充整个容器宽度 */
+    height: auto; /* 保持图片的宽高比 */
+    /* 使用box-shadow虚化边缘 */
+    box-shadow: 0 0 0.1px rgba(0, 0, 0, 0.5);
+    /* 或者使用filter: blur()虚化边缘 */
+    filter: blur(0.2px);
+}
+body{
+    background-color:black;
+}

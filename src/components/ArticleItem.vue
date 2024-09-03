@@ -7,7 +7,10 @@ const props = defineProps({
     type:String,
     required:true
   },
-  link:String || Object,
+  link:{
+    type:String,
+    default:'/'
+  },
   author: {
     type:String,
     default:'张三'

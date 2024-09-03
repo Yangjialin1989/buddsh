@@ -43,7 +43,7 @@ const articleDatas = reactive([
     <ArticleItem v-for="(item,index) in articleDatas"
                  :key="index"
                  :title="item.title"
-                 :link="item.link"
+                 :link="`/article/${item.link}`"
                  :desc="item.desc"
     >
 <!--      渲染插槽,插槽内的内容都会被替换掉-->

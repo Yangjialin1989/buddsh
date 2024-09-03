@@ -30,25 +30,25 @@
 
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item  has-text-weight-bold ">
+          <router-link :to="{name:'index'}" class="navbar-item  has-text-weight-bold ">
             首页
-          </a>
+          </router-link>
 
-          <a class="navbar-item  has-text-weight-bold ">
+          <router-link class="navbar-item  has-text-weight-bold ">
             简介
-          </a>
-          <a class="navbar-item  has-text-weight-bold ">
+          </router-link>
+          <router-link class="navbar-item  has-text-weight-bold ">
             动态
-          </a>
-          <a class="navbar-item  has-text-weight-bold ">
+          </router-link>
+          <router-link :to="{name:'category',params:{id:3}}" class="navbar-item  has-text-weight-bold ">
             讲法
-          </a>
-          <a class="navbar-item  has-text-weight-bold ">
+          </router-link>
+          <router-link class="navbar-item  has-text-weight-bold ">
             传承
-          </a>
-          <a class="navbar-item  has-text-weight-bold ">
+          </router-link>
+          <router-link class="navbar-item  has-text-weight-bold ">
             华雨缤纷
-          </a>
+          </router-link>
 
 
 
@@ -58,16 +58,16 @@
             </a>
 
             <div class="navbar-dropdown">
-              <a class="navbar-item">
+              <router-link class="navbar-item">
                 临终关怀
-              </a>
-              <a class="navbar-item">
+              </router-link>
+              <router-link class="navbar-item">
                 墨宝欣赏
-              </a>
+              </router-link>
               <hr class="navbar-divider">
-              <a class="navbar-item">
+              <router-link class="navbar-item">
                 联系我们
-              </a>
+              </router-link>
             </div>
           </div>
         </div>
@@ -114,8 +114,10 @@
             <div class="control has-icons-right">
               <input class="is-small-mobile is-small input point"
                      type="text"
-
-                     placeholder="搜索">
+                     v-model="searchValue"
+                     placeholder="搜索"
+                     @click="searchCallBack"
+              >
               <span class="icon is-small is-right">
             <font-awesome-icon icon="fa-solid fa-search" aria-hidden="true"/>
           </span>
@@ -170,6 +172,13 @@
 </template>
 <script setup>
 import axios from 'axios'
+
+//创建动态路由用,封装好的a标签组件
+import {RouterLink} from "vue-router";
+
+//导入路由
+import router from '@/router'
+
 import $ from 'jquery'
 import {getCurrentInstance, ref,defineProps,defineEmits} from "vue";
 import {useCategoryStore} from "@/stores/category.js";
@@ -182,12 +191,26 @@ console.log(categoryDatas)
 //   store.apiCategory()
 // }
 
+//全局搜索
+const searchValue = ref('')
 
 const {proxy} = getCurrentInstance()
 const isMobile = ref(proxy.$utils.ISMOBILE)
 const props = defineProps(['theme'])
 const themeIcon = ref('light')
 const emit = defineEmits(['theme'])
+
+//全局搜索
+const searchCallBack = ()=>{
+  //将搜索框的输入内容(关键字）传递给路由
+  router.push({
+    name:"search",
+    query:{search:searchValue.value}
+  })
+}
+
+
+
 //主题修改
 const themes=(parment)=>{
   emit('theme',parment)

@@ -5,6 +5,7 @@ import Index from "@/views/Index.vue";
 import CategoryView from "@/views/CategoryView.vue";
 import ArticleDetail from "@/views/ArticleDetail.vue";
 import SearchView from "@/views/SearchView.vue";
+import Login from "@/views/Login.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -55,6 +56,11 @@ const router = createRouter({
         }
         ]
     },
+    {
+      path:'/login',
+      name:'login',
+      component:Login
+    }
 
 
   ]

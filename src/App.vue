@@ -2,6 +2,7 @@
 import { RouterView } from 'vue-router'
 import Layout from "@/layout/Layout.vue";
 import {onMounted,getCurrentInstance, ref} from "vue";
+import Layout1 from "@/layout/Layout1.vue";
 const {proxy} = getCurrentInstance()
 const isMobile = ref(proxy.$utils.ISMOBILE)
 onMounted(()=>{
@@ -18,7 +19,7 @@ onMounted(()=>{
 </script>
 <template>
 <!--  <RouterView/>-->
-  <Layout></Layout>
+  <Layout1></Layout1>
 </template>
 
 <style lang="scss" >

@@ -6,6 +6,7 @@ import CategoryView from "@/views/CategoryView.vue";
 import ArticleDetail from "@/views/ArticleDetail.vue";
 import SearchView from "@/views/SearchView.vue";
 import Login from "@/views/Login.vue";
+import Register from "@/views/Register.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -60,10 +61,29 @@ const router = createRouter({
       path:'/login',
       name:'login',
       component:Login
+    },
+    {
+      path:'/register',
+      name:'register',
+      component:Register
     }
 
 
   ]
 })
+// 路由守卫
+router.beforeEach((to, from, next) => {
+  // 可以进行身份验证、权限检查等操作
+  // ...
+
+  // 必须调用next()来resolve这个钩子。
+  // 它可以接受一个路径作为参数来强制跳转到另一个路径
+  next()
+})
+
+
+
+
+
 
 export default router

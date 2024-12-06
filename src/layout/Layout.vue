@@ -1,7 +1,6 @@
 
 
 <template>
-
   <div class="" id="main">
     <div class="scroll">
       <div class="container cont1" >
@@ -19,7 +18,6 @@
 
 
       </div>
-
       <footer class="footer footer1">
         <div class="container">
           <div class="columns">
@@ -76,16 +74,9 @@
 
               </p>
             </div>
-
-
-
           </div>
         </div>
-
       </footer>
-
-
-
     </div>
   </div>
 </template>
@@ -126,7 +117,8 @@ function handleTheme(theme){
   }else{
     $('#main').addClass('theme-light')
     $('#main').removeClass('theme-dark')
-    $('body').css('background-color', '');
+    $('body').css('background-color', 'hsl(36, 80%, 77%)');
+
   }
 
 }
@@ -169,6 +161,7 @@ onMounted(()=>{
 
 
 #main{
+  background-color:hsl(36, 80%, 77%);
   width: 100vw;
   position: fixed;
 

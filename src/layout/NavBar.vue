@@ -14,7 +14,7 @@
           <!--                  fill="#00D1B2"/>-->
           <!--          </svg>-->
           <figure class="image  logologo">
-            <img class="is-rounded" src="../assets/logo.png">
+            <img class="is-rounded" src="../assets/logo144.png">
           </figure>
 
 
@@ -127,10 +127,10 @@
 
 
             <div class="buttons">
-              <a class="button is-primary is-small"  @click="RegisterVisible(true)">
+              <a class="button is-primary is-small"  @click="router.push('/register')">
                 <strong>注册</strong>
               </a>
-              <a class="button is-light js-modal-trigger is-small" @click="LoginVisible(true)">
+              <a class="button is-light js-modal-trigger is-small" @click="router.push('/login')">
                 登录
               </a>
             </div>
@@ -166,161 +166,8 @@
 
     </div>
 
-    <!--    登录界面-->
-
-    <div class="modal is-active" v-if="loginVisible" >
-      <div class="modal-background"></div>
-      <div class="modal-card">
-        <header class="modal-card-head p-3">
-          <p class="modal-card-title">登录账号</p>
-          <button class="delete" @click="LoginVisible(false)" aria-label="close"></button>
-        </header>
-        <section class="modal-card-body" style="overflow:hidden">
-          <!-- Content ... -->
-          <div class="field">
-            <p class="control has-icons-left has-icons-right ">
-              <input class="input" type="text" placeholder="用户名">
-              <span class="icon is-small is-left">
-                <i class="fas">
-                  <user-outlined />
-                </i>
-              </span>
-              <span class="icon is-small is-right">
-                <i class="fal">
-                  <down-outlined />
-                </i>
-              </span>
-            </p>
-          </div>
-
-          <div class="field">
-            <p class="control has-icons-left">
-              <input class="input" type="password" placeholder="密码">
-              <span class="icon is-small is-left">
-                <i class="fal">
-                  <lock-outlined />
-                </i>
-              </span>
-            </p>
-            <div class="columns">
-              <div class="column is-size-7 is-8 has-text-left mt-3">
-
-                    <input style="margin-top:10px;" type="checkbox" />
-
-                  已阅读并同意 <a href="#">网站服务协议</a>
 
 
-
-              </div>
-
-              <div class="column is-size-7 has-text-right mt-3">
-                <a href="#">忘记密码</a>
-              </div>
-            </div>
-
-          </div>
-
-
-          <div class="field">
-            <p class="control has-text-centered	">
-              <button class="button is-success">
-                登录
-              </button>
-            </p>
-          </div>
-
-
-          <div class="has-background-light">
-
-
-          <div class="is-size-7 has-text-centered	">
-            选择第三方登录
-          </div>
-          <br>
-
-          <div class="is-size-6 has-text-centered	">
-            <button class="button ml-1">
-              <span class="icon has-text-success">
-                <i class="fas fa-heading fa-lg">
-                  <wechat-outlined/>
-                </i>
-              </span>
-            </button>
-            <button class="button ml-1">
-              <span class="icon has-text-danger">
-                <i class="fas fa-heading fa-lg">
-                  <qq-outlined/>
-                </i>
-              </span>
-            </button>
-          </div>
-
-          <div class="is-size-7 has-text-centered	mt-4">
-            暂时没有账号，<a href="#" @click="LoginVisibleToggle(false)">立即注册</a>
-          </div>
-          </div>
-        </section>
-
-      </div>
-    </div>
-
-    <div class="modal is-active" v-if="registerVisible">
-      <div class="modal-background"></div>
-      <div class="modal-card">
-        <header class="modal-card-head p-3">
-          <p class="modal-card-title">注册账号</p>
-          <button class="delete" @click="RegisterVisible(false)" aria-label="close"></button>
-        </header>
-        <section class="modal-card-body">
-          <!-- Content ... -->
-          <div class="field">
-            <p class="control has-icons-left  ">
-              <input class="input" type="text" placeholder="昵称">
-              <span class="icon is-small is-left">
-                <i class="fas">
-                  <user-outlined />
-                </i>
-              </span>
-            </p>
-          </div>
-          <div class="field">
-            <p class="control has-icons-left">
-              <input class="input" type="password" placeholder="设置密码">
-              <span class="icon is-small is-left">
-                <i class="fas">
-                  <LockOutlined></LockOutlined>
-                </i>
-              </span>
-            </p>
-          </div>
-          <div class="field">
-            <p class="control has-icons-left">
-              <input class="input" type="password" placeholder="再次输入密码">
-              <span class="icon is-small is-left">
-                <i class="fas">
-                  <LockOutlined></LockOutlined>
-                </i>
-              </span>
-            </p>
-          </div>
-
-
-          <div class="field">
-            <p class="control has-text-centered	">
-              <button class="button is-success">
-                注册
-              </button>
-            </p>
-          </div>
-          <div class="is-size-7 has-text-centered	mt-4">
-            已有账号，直接<a href="#" @click="LoginVisibleToggle(true)">登录</a>
-          </div>
-
-
-        </section>
-
-      </div>
-    </div>
 
   </div>
 
@@ -484,6 +331,9 @@ $(document).ready(function () {
 
 </script>
 <style lang="scss" scoped>
+.navbar{
+  //background-color:hsl(36, 80%, 77%);
+}
 .modal-card {
   width: 30rem;
 }
